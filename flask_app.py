@@ -1,5 +1,5 @@
-
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, url_for
+from flask import request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -16,15 +16,6 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-class Comment(db.Model):
-
-    __tablename__ = "comments"
-
-    id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String(4096))
-    author = db.Column(db.String(512))
-
-
 class Quote(db.Model):
 
     __tablename__ = "quotes"
@@ -32,9 +23,6 @@ class Quote(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(4096))
     author = db.Column(db.String(512))
-
-
-#comments = []
 
 @app.route("/", methods=["GET", "POST"])
 def index():

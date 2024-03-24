@@ -46,14 +46,14 @@
         <div class="rowbox">
             <form action="." method="POST">
                 <textarea name="contents" placeholder="Enter a Quote" class="form-control"></textarea>
-                <input type="submit" value="Submit Quote" <input type="submit" class="btn btn-success" value="Post comment">
+                <input type="submit" value="Submit Quote" <input type="submit" class="btn btn-success" value="Post Quote">
             </form>
         </div>
 
 
-{% for comment in comments %}
+{% for quote in quotes %}
     <div class="row">
-        {{ comment.content }}
+        {{ quote.content }}
     </div>
 {% endfor %}
 

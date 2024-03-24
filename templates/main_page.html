@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Quotes I want to remember</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        <style>
+            .row {
+
+                font: 25px  "Times New Roman", Times, serif;
+                  border-radius: 25px;
+                  background: #7AF;
+                  padding: 20px;
+                  width: 700px;
+                  height: 65px;
+                  margin: 5px;
+
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">My scratchpad</a>
+            </div>
+        </div>
+        </nav>
+
+
+    <div class="container">
+        <div class="row">
+            "Just do it" by Phil Hampson knight, co-founder of Nike.
+        </div>
+
+        <div class="rowbox">
+            <form action="." method="POST">
+                <textarea name="contents" placeholder="Enter a Quote" class="form-control"></textarea>
+                <input type="submit" value="Submit Quote" <input type="submit" class="btn btn-success" value="Post comment">
+            </form>
+        </div>
+
+
+{% for comment in comments %}
+    <div class="row">
+        {{ comment.content }}
+    </div>
+{% endfor %}
+
+    </div> <!-- /.container -->
+    </body>
+</html>

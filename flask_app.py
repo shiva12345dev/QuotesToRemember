@@ -16,9 +16,9 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-class Comment(db.Model):
+class Quote(db.Model):
 
-    __tablename__ = "comments"
+    __tablename__ = "quotes"
 
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(4096))
@@ -30,11 +30,11 @@ class Comment(db.Model):
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "GET":
-        return render_template("main_page.html", comments=Comment.query.all())
+        return render_template("main_page.html", quotes=Quote.query.all())
 
     #comments.append(request.form["contents"])
-    comment = Comment(content=request.form["contents"])
-    db.session.add(comment)
+    quote = Quote(content=request.form["contents"])
+    db.session.add(quote)
     db.session.commit()
     return redirect(url_for('index'))
 

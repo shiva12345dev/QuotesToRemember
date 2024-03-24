@@ -24,6 +24,9 @@ class Quote(db.Model):
     content = db.Column(db.String(4096))
     author = db.Column(db.String(512))
 
+
+#comments = []
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "GET":

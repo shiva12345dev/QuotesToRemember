@@ -7,16 +7,22 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
         <style>
+            .body {font-family:Papyrus,Serif;}
             .row {
+                font-family:"Times New Roman", Times, serif;
+                border-radius: 25px;
+                background: #eee;
+                padding: 10px;
+                width: 95%;
 
-                font: 25px  "Times New Roman", Times, serif;
-                  border-radius: 25px;
-                  background: #7AF;
-                  padding: 20px;
-                  width: 700px;
-                  height: 65px;
-                  margin: 5px;
-
+                margin: 10px;
+                text-align: center;
+                font-size:Large;
+                line-height: 1.5;
+                box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            }
+            .row:hover{
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8) !important;
             }
 
         </style>
@@ -32,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">My scratchpad</a>
+                <a class="navbar-brand" href="#">Some of the Quotes I want to remember...</a>
             </div>
         </div>
         </nav>
@@ -43,9 +49,9 @@
             "Just do it" by Phil Hampson knight, co-founder of Nike.
         </div>
 
-        <div class="rowbox">
+        <div class="row">
             <form action="." method="POST">
-                <textarea name="contents" placeholder="Enter a Quote" class="form-control"></textarea>
+                <textarea name="contents" placeholder="Enter a Quote" class="form-control" class="row"></textarea>
                 <input type="submit" value="Submit Quote" <input type="submit" class="btn btn-success" value="Post Quote">
             </form>
         </div>
@@ -58,5 +64,10 @@
 {% endfor %}
 
     </div> <!-- /.container -->
+    <footer align='center'>This is a simple implementation of a Python / Flask / MySQL / single page website.
+    <br />
+    based on python anywhere walk thru: <a href="https://blog.pythonanywhere.com/121/">https://blog.pythonanywhere.com/121/</a>
+    <hr/>
+    source Code available here https://github.com/shiva12345dev/QuotesToRemember </footer>
     </body>
 </html>
